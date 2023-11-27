@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tunix
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /kubik
+            backend:
+              service:
+                name: kubik
+                port:
+                  number: 80
